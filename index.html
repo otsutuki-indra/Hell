@@ -1,177 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HellCorp • Unleash Hell on Your Workflow</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0a0f0a 0%, #111b11 100%);
-      color: #e0f2e0;
-      overflow-x: hidden;
-    }
-
-    .glass {
-      background: rgba(20, 40, 25, 0.65);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(80, 200, 120, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-    }
-
-    .neon-green {
-      text-shadow: 0 0 20px #50c878, 0 0 40px #50c878;
-    }
-
-    .hero-bg {
-      background: radial-gradient(circle at center, rgba(80, 200, 120, 0.15) 0%, transparent 70%);
-    }
-
-    .scroll-animate {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HellCrop - AI Powered Crop Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a1f0f, #1a2f1f);
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15);
+        }
+        .bubble {
+            animation: float 25s infinite linear;
+        }
+    </style>
 </head>
-<body class="min-h-screen">
+<body class="bg-black text-white overflow-x-hidden">
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full z-50 glass border-b border-green-500/30">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-green-500 rounded-2xl flex items-center justify-center text-black font-bold text-2xl">H</div>
-        <h1 class="text-3xl font-black tracking-tighter neon-green">HELL<span class="text-green-400">CORP</span></h1>
-      </div>
-      <div class="hidden md:flex gap-8 text-lg font-medium">
-        <a href="#" class="hover:text-green-400 transition">Features</a>
-        <a href="#" class="hover:text-green-400 transition">Pricing</a>
-        <a href="#" class="hover:text-green-400 transition">Docs</a>
-        <a href="#" class="hover:text-green-400 transition">Blog</a>
-      </div>
-      <button onclick="alert('Welcome to Hell 🔥')" 
-              class="px-8 py-3 bg-green-500 hover:bg-green-600 text-black font-bold rounded-3xl transition-all transform hover:scale-105">
-        Enter the Hell
-      </button>
+    <!-- Background Animation -->
+    <div class="fixed inset-0 hero-bg z-[-1]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(0,255,136,0.08),transparent)]"></div>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-bg min-h-screen flex items-center pt-20">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      
-      <div class="space-y-8">
-        <div class="inline-flex items-center gap-2 px-6 py-2 glass rounded-full border border-green-400/50 text-sm font-medium">
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-          </span>
-          NOW IN OPEN BETA – 10,000+ DEMONS JOINED
+    <!-- Navbar -->
+    <nav class="border-b border-green-900">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-3xl font-bold tracking-tight">
+                Hell<span class="text-emerald-400">Crop</span>.
+            </div>
+            <a href="https://hellcorp.pages.dev/login" 
+               class="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-xl font-semibold transition">
+                Sign In
+            </a>
         </div>
+    </nav>
 
-        <h1 class="text-7xl md:text-8xl font-black leading-none tracking-tighter">
-          HELL<span class="text-green-400">CORP</span><br>
-          <span class="neon-green">MAKE WORK</span><br>
-          SUFFER.
-        </h1>
-
-        <p class="text-2xl text-green-100/80 max-w-lg">
-          The only SaaS tool that works harder than you.<br>
-          Automate. Destroy bottlenecks. Rule everything.
-        </p>
-
-        <!-- Cool Dialogue -->
-        <div class="glass p-6 rounded-3xl max-w-md border-l-4 border-green-400">
-          <p class="italic text-green-300">"Finally a tool that doesn't suck. It makes my competitors cry in the corner."</p>
-          <p class="text-right mt-3 text-sm font-bold text-green-400">- Satan, CEO of Underworld Inc.</p>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                    AI দিয়ে <span class="text-emerald-400">Crop</span> বুঝুন<br>সমস্যা সমাধান করুন
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    Upload your crop photo and get instant AI explanation, disease detection, and treatment suggestions.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-2xl font-semibold text-lg flex items-center gap-2">
+                        Try Demo Free <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="border border-emerald-500 hover:bg-emerald-950 px-8 py-4 rounded-2xl font-semibold text-lg">
+                        Watch Video
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://picsum.photos/id/1015/800/600" 
+                     class="rounded-3xl shadow-2xl border border-emerald-900" alt="Crop Analysis">
+            </div>
         </div>
+    </section>
 
-        <div class="flex gap-4">
-          <button onclick="alert('🚀 Redirecting to Hell Dashboard...')" 
-                  class="flex-1 py-6 bg-green-500 hover:bg-green-600 text-black text-xl font-bold rounded-3xl transition-all active:scale-95">
-            START FREE TRIAL 🔥
-          </button>
-          <button onclick="alert('Demo video playing in your nightmares...')" 
-                  class="flex-1 py-6 border-2 border-green-400 hover:bg-green-400/10 text-xl font-bold rounded-3xl transition-all">
-            Watch 47s Demo
-          </button>
-        </div>
-
-        <div class="flex items-center gap-8 text-sm opacity-75">
-          <div>✅ No credit card</div>
-          <div>✅ Cancel anytime</div>
-          <div>✅ 666 days free</div>
-        </div>
-      </div>
-
-      <!-- Right Side Visual -->
-      <div class="relative hidden md:block">
-        <div class="glass rounded-[4rem] p-8 scroll-animate border border-green-400/40">
-          <div class="bg-black/80 rounded-3xl p-6 h-[520px] relative overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(#50c878_1px,transparent_1px)] [background-size:40px_40px] opacity-10"></div>
+    <!-- Features Section (4 Cards) -->
+    <section class="py-20 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Powerful AI Tools for Farmers</h2>
             
-            <div class="text-center mt-12">
-              <div class="text-6xl font-black neon-green mb-2">∞</div>
-              <p class="text-green-400 text-3xl font-bold">Productivity Hell Mode</p>
-              <p class="text-5xl font-black mt-6 text-white">ON</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-zinc-900 p-8 rounded-3xl card-hover border border-emerald-900">
+                    <i class="fas fa-camera text-4xl text-emerald-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Photo Explain</h3>
+                    <p class="text-gray-400">Crop ছবি আপলোড করুন, AI তাৎক্ষণিক ব্যাখ্যা দিবে।</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-zinc-900 p-8 rounded-3xl card-hover border border-emerald-900">
+                    <i class="fas fa-bug text-4xl text-emerald-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Disease Detection</h3>
+                    <p class="text-gray-400">রোগ শনাক্ত করে চিকিৎসার পরামর্শ দেয়।</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-zinc-900 p-8 rounded-3xl card-hover border border-emerald-900">
+                    <i class="fas fa-leaf text-4xl text-emerald-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Crop Health</h3>
+                    <p class="text-gray-400">স্বাস্থ্য বিশ্লেষণ ও উন্নতির সাজেশন।</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-zinc-900 p-8 rounded-3xl card-hover border border-emerald-900">
+                    <i class="fas fa-chart-line text-4xl text-emerald-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Yield Prediction</h3>
+                    <p class="text-gray-400">ফলনের সম্ভাব্যতা জানুন আগে থেকে।</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="absolute bottom-8 left-8 right-8 space-y-4">
-              <div class="h-3 bg-green-400/30 rounded-full overflow-hidden">
-                <div class="h-full w-[93%] bg-green-400 rounded-full"></div>
-              </div>
-              <div class="flex justify-between text-xs text-green-300">
-                <span>Tasks Crushed Today</span>
-                <span class="font-mono">4,666</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Floating badges -->
-        <div class="absolute -top-6 -right-6 glass px-8 py-4 rounded-3xl text-center border border-green-400/50">
-          <div class="text-4xl">⚡</div>
-          <div class="font-bold text-green-400">10x Faster</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Features -->
-  <section class="py-24 bg-black/40">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-black text-center mb-16 neon-green">Features from the Depths</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass p-10 rounded-3xl hover:scale-105 transition-all">
-          <div class="text-6xl mb-6">🔥</div>
-          <h3 class="text-3xl font-bold mb-4">Auto-Hell Mode</h3>
-          <p class="text-green-100/70">AI that works while you sleep. Or party. Or both.</p>
-        </div>
-        <div class="glass p-10 rounded-3xl hover:scale-105 transition-all">
-          <div class="text-6xl mb-6">⚔️</div>
-          <h3 class="text-3xl font-bold mb-4">Competitor Slayer</h3>
-          <p class="text-green-100/70">Steals their ideas and improves them in 0.3s.</p>
-        </div>
-        <div class="glass p-10 rounded-3xl hover:scale-105 transition-all">
-          <div class="text-6xl mb-6">🌪️</div>
-          <h3 class="text-3xl font-bold mb-4">Chaos Engine</h3>
-          <p class="text-green-100/70">Turns your messy data into pure demonic power.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="py-12 text-center text-green-400/60 text-sm">
-    © 2026 HellCorp • All Rights Reserved in Hell • Made with pure evil &amp; Tailwind
-  </footer>
+    <footer class="border-t border-zinc-800 py-10 text-center text-gray-500">
+        © 2026 HellCrop. All rights reserved.
+    </footer>
 
 </body>
 </html>
